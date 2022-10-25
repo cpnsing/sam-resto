@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   emojiBox: {
     position: "absolute",
-    // width: "100%",
+
     bottom: "47px",
   },
   rightBox: {
@@ -229,7 +229,7 @@ export default function () {
         }
         toast.success(res.data.responseMessage);
       }
-    } catch (error) { }
+    } catch (error) {}
   };
   useEffect(() => {
     if (location.search.substring(1, location.search.length)) {
@@ -264,9 +264,9 @@ export default function () {
             <Grid container spacing={2}>
               <Grid item sm={12} md={12} lg={8}>
                 {dataList?.postType === "PUBLIC" ||
-                  dataList?.isSubscribed ||
-                  auth?.userData?.userType === "Admin" ||
-                  auth?.userData?.userType === "Subadmin" ? (
+                dataList?.isSubscribed ||
+                auth?.userData?.userType === "Admin" ||
+                auth?.userData?.userType === "Subadmin" ? (
                   <Box className={classes.rightBox}>
                     {isvideo ? (
                       <video
@@ -388,7 +388,7 @@ export default function () {
                             })}
                         </Box>
                       </Accordion>
-                      <Box className={classes.searchaddress} >
+                      <Box className={classes.searchaddress}>
                         <Grid container spacing={1} alignItems="center">
                           <Grid item xs={2} sm={2}>
                             <Box className="figure">
